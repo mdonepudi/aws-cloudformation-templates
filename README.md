@@ -2,7 +2,7 @@
 Some sample AWS CloudFormation templates to demonstrate the functionality. This should not be used at production purposes. 
 
 ## How to use the templates?
-Can use 'create stack' option both on AWS Console and AWS CLI. If not familiar with CloudFormation, please use [Getting Started] (https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html) walkthrough guide to use the templates in this repository.
+Can use 'create stack' option both on AWS Console and AWS CLI. If not familiar with CloudFormation, please use [Getting Started](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html) walkthrough guide to use the templates in this repository.
 
 ## new-iam-user-iam-policy
 Template Parameters:
