@@ -1,0 +1,54 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "AWS CloudFormation Sample Template to demonstrate how to create IAM user and IAM Managed Policy and assign the policy to the user.",
+    "Parameters": {
+        "ThisCFPwd": {
+            "NoEcho": "true",
+            "Type": "String",
+            "Description": "Provide password for the new user"
+        }
+    },
+    "Resources": {
+        "ThisCFUser": {
+            "Type": "AWS::IAM::User",
+            "Properties": {
+                "UserName": "CFUser",
+                "LoginProfile": {
+                    "Password": {
+                        "Ref": "ThisCFPwd"
+                    }
+                }
+            }
+        },
+        "ThisCFPolicy": {
+            "Type": "AWS::IAM::ManagedPolicy",
+            "Properties": {
+                "ManagedPolicyName": "CFPolicy",
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Action": [
+                                "ec2:*"
+                            ],
+                            "Resource": "*"
+                        },
+                        {
+                            "Effect": "Deny",
+                            "Action": [
+                                "cloudtrail:*"
+                            ],
+                            "Resource": "*"
+                        }
+                    ]
+                },
+                "Users": [
+                    {
+                        "Ref": "ThisCFUser"
+                    }
+                ]
+            }
+        }
+    }
+}
