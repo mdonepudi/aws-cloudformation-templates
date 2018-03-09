@@ -7,7 +7,8 @@ Can use 'create stack' option both on AWS Console and AWS CLI. If not familiar w
 ## new-iam-user-iam-policy
 Template Parameters:
  - ThisCFPwd
-    - Password for the new IAM user 
+    - Password for the new IAM user. 
+
 This template demonstrates:
  - Create a new IAM user
  - Create a new IAM Managed Policy with:
